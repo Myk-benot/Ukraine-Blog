@@ -46,6 +46,7 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  gap: 0.75rem;
   margin-top: 0;
   background-color: #ffd700;
   color: #0057b8;
