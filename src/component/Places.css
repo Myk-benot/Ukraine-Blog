@@ -1,0 +1,64 @@
+.places-div {
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  width: 95%;
+}
+
+.places-img {
+  margin: 2.5rem 0;
+  max-width: 50%;
+  height: auto;
+  transition: transform 0.3s, filter 0.3s;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.places-img:hover {
+  transform: scale(1.1);
+}
+
+.desc-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex: 1;
+  max-width: 45%;
+  line-height: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.places-link {
+  font-size: 1.2rem;
+  color: #0057b8;
+}
+
+.places-title {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.places-link:hover {
+  color: #252525;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .places-div {
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    width: 100%;
+  }
+
+  .places-img {
+    max-width: 80%;
+    height: auto;
+  }
+
+  .desc-div {
+    max-width: 80%;
+  }
+}
