@@ -21,16 +21,16 @@ export default function Navbar() {
       <h3 className="title">UKRAINE</h3>
       <ul className={`nav-list ${isActive ? "Active" : ""}`}>
         <li className="link" onClick={() => handleNavigation("/Home")}>
-          Home
+          home
         </li>
         <li className="link" onClick={() => handleNavigation("/About")}>
-          About
+          about
         </li>
         <li className="link" onClick={() => handleNavigation("/Places")}>
-          Places
+          places
         </li>
         <li className="link" onClick={() => handleNavigation("/People")}>
-          People
+          people
         </li>
       </ul>
       <Hamburger onClick={toggleHamburger} />
