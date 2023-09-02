@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import "./People.css";
 import peopleArray from "./People-info.jsx";
 
@@ -19,10 +20,17 @@ const Person = (props) => {
 
 export default function People() {
   return (
-    <div className="people-container">
-      {peopleArray.map((person) => (
-        <Person key={person.id} person={person} />
-      ))}
-    </div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1.5 }}
+    >
+      <div className="people-container">
+        {peopleArray.map((person) => (
+          <Person key={person.id} person={person} />
+        ))}
+      </div>
+    </motion.div>
   );
 }

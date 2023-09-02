@@ -1,5 +1,6 @@
-import * as React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import Navbar from "./component/Navbar";
 import Home from "./component/Home";
 import About from "./component/About";
@@ -9,11 +10,12 @@ import Footer from "./component/Footer";
 import Errormessage from "./component/Errormessage";
 
 function App() {
+  const location = useLocation();
   return (
-    <BrowserRouter>
+    <AnimatePresence mode="wait">
       <div>
         <Navbar />
-        <Routes>
+        <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="Home" element={<Home />} />
           <Route path="About" element={<About />} />
@@ -23,7 +25,7 @@ function App() {
         </Routes>
         <Footer />
       </div>
-    </BrowserRouter>
+    </AnimatePresence>
   );
 }
 

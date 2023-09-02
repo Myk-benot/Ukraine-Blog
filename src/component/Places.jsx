@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import "./Places.css";
 import placesArray from "./Place-info";
 
@@ -26,10 +27,17 @@ const City = (props) => {
 
 export default function Places() {
   return (
-    <div>
-      {placesArray.map((city) => (
-        <City key={city.id} city={city} />
-      ))}
-    </div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1.5 }}
+    >
+      <div>
+        {placesArray.map((city) => (
+          <City key={city.id} city={city} />
+        ))}
+      </div>
+    </motion.div>
   );
 }
