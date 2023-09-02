@@ -22,7 +22,7 @@ export default function Navbar() {
       initial={{ scaleX: 0 }}
       animate={{ scaleX: 1 }}
       exit={{ scaleX: 0 }}
-      transition={{ duration: 1.5 }}
+      transition={{ duration: 1 }}
     >
       <div className="navigation">
         <h3 className="title">UKRAINE</h3>

@@ -9,7 +9,7 @@ export default function Footer() {
       initial={{ scaleY: 0 }}
       animate={{ scaleY: 1 }}
       exit={{ scaleY: 0 }}
-      transition={{ duration: 1.5 }}
+      transition={{ duration: 1 }}
     >
       <div className="footer-div">
         <img src={Icon} className="footer-img"></img>
