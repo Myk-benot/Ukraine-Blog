@@ -10,6 +10,9 @@ export default function Navbar() {
 
   const toggleHamburger = () => {
     setIsActive(!isActive);
+    if (!isActive) {
+      document.querySelector(".nav-list.Active").classList.remove("Active");
+    }
   };
 
   const handleNavigation = (path) => {
@@ -19,28 +22,49 @@ export default function Navbar() {
 
   return (
     <motion.div
-      initial={{ scaleX: 0 }}
-      animate={{ scaleX: 1 }}
-      exit={{ scaleX: 0 }}
-      transition={{ duration: 1 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1.5 }}
     >
       <div className="navigation">
-        <h3 className="title">UKRAINE</h3>
-        <ul className={`nav-list ${isActive ? "Active" : ""}`}>
-          <li className="link" onClick={() => handleNavigation("/Home")}>
-            home
-          </li>
-          <li className="link" onClick={() => handleNavigation("/About")}>
-            about
-          </li>
-          <li className="link" onClick={() => handleNavigation("/Places")}>
-            places
-          </li>
-          <li className="link" onClick={() => handleNavigation("/People")}>
-            people
-          </li>
-        </ul>
-        <Hamburger onClick={toggleHamburger} />
+        {isActive ? (
+          <div className="nav-list Active">
+            <ul>
+              <li className="link" onClick={() => handleNavigation("/Home")}>
+                home
+              </li>
+              <li className="link" onClick={() => handleNavigation("/About")}>
+                about
+              </li>
+              <li className="link" onClick={() => handleNavigation("/Places")}>
+                places
+              </li>
+              <li className="link" onClick={() => handleNavigation("/People")}>
+                people
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <>
+            <h3 className="title">UKRAINE</h3>
+            <ul className="nav-list">
+              <li className="link" onClick={() => handleNavigation("/Home")}>
+                home
+              </li>
+              <li className="link" onClick={() => handleNavigation("/About")}>
+                about
+              </li>
+              <li className="link" onClick={() => handleNavigation("/Places")}>
+                places
+              </li>
+              <li className="link" onClick={() => handleNavigation("/People")}>
+                people
+              </li>
+            </ul>
+            <Hamburger onClick={toggleHamburger} />
+          </>
+        )}
       </div>
     </motion.div>
   );
