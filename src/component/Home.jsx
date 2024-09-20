@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import "./Home.css";
 import Ukraine1 from "../images/Ukraine1.jpeg";

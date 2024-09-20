@@ -1,4 +1,3 @@
-import React from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Navbar from "./component/Navbar";
@@ -7,6 +6,7 @@ import About from "./component/About";
 import Places from "./component/Places";
 import People from "./component/People";
 import Footer from "./component/Footer";
+import Dashboard from "./component/Dashboard";
 import Errormessage from "./component/Errormessage";
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
           <Route path="About" element={<About />} />
           <Route path="Places" element={<Places />} />
           <Route path="People" element={<People />} />
+          <Route path="Dashboard" element={<Dashboard />} />
           <Route path="*" element={<Errormessage />} />
         </Routes>
         <Footer />

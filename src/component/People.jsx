@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import "./People.css";
 import peopleArray from "./People-info.jsx";
